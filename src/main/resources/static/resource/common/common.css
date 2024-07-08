@@ -16,3 +16,7 @@ html > body {
   font-family: 'Pretendard-Regular';
   text-underline-position: under;
 }
+/* !important 는 라이브러리다무시하고 내꺼쓰겠다라는느낌*/
+.collapse{
+    visibility: visible !important;
+}
