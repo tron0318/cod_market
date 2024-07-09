@@ -18,13 +18,10 @@ public class MemberForm {
     @Size(min = 3, max = 25)
     @NotBlank
     private String username;
-
     @NotBlank
     private String password;
-
     @NotBlank
     private String nickname;
-
     @Email
     @NotBlank
     private String email;
