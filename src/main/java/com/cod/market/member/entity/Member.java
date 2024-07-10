@@ -1,5 +1,7 @@
 package com.cod.market.member.entity;
 
+import com.cod.market.base.BaseEntity;
+import com.fasterxml.jackson.databind.ser.Serializers;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -15,10 +17,8 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @Entity
 @Getter
 @Setter
-public class Member {
-    @Id
-    @GeneratedValue(strategy = IDENTITY)
-    private long id;
+public class Member extends BaseEntity {
+
 
     private String username;
     private String password;
@@ -26,9 +26,5 @@ public class Member {
     private String nickname;
     private String email;
 
-    @CreatedDate
-    private LocalDateTime createDate;
 
-    @LastModifiedDate
-    private LocalDateTime modifyDate;
 }
