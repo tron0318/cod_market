@@ -70,6 +70,20 @@
 
                 </li>
                 </ul>
+            <script>
+                $(document).ready(function() {
+                    $(window).on('beforeunload', function() {
+                        sessionStorage.setItem('scrollPosition', $(window).scrollTop());
+                    });
+
+                    if (sessionStorage.getItem('scrollPosition')) {
+                        $(window).scrollTop(sessionStorage.getItem('scrollPosition'));
+                        sessionStorage.removeItem('scrollPosition');
+                    }
+                });
+            </script>
+
+
         </div>
 
     </div>
