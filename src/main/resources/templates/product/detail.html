@@ -32,7 +32,7 @@
             </li>
             <li class="list-group-item">
                 <span>마켓 :</span>
-                <span class="badge bg-primary">COD</span>
+                <span class="badge bg-black">COD</span>
             </li>
         </ul>
         <div class="card mt-[30px]">
@@ -67,14 +67,14 @@
 
                     <a
                             th:href="@{|/question/modify/${question.id}|}"
-                            class="btn btn-sm btn-info"
+                            class="btn btn-sm btn-link"
                             sec:authorize="isAuthenticated()"
                             th:if="${question.member != null and #authentication.getPrincipal().getUsername() == question.member.username}">
                         수정
                     </a>
                     <a
                             th:href="@{|/question/delete/${question.id}|}"
-                            class="btn btn-sm btn-warning"
+                            class="btn btn-sm btn-link"
                             onclick="if( confirm('정말 삭제하시겠습니까') == false) return false;"
                             sec:authorize="isAuthenticated()"
                             th:if="${question.member != null and #authentication.getPrincipal().getUsername() == question.member.username}">
