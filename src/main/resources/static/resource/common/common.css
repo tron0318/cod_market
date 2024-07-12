@@ -16,7 +16,22 @@ html > body {
   font-family: 'Pretendard-Regular';
   text-underline-position: under;
 }
-/* !important 는 라이브러리다무시하고 내꺼쓰겠다라는느낌*/
-.collapse{
+
+.collapse {
     visibility: visible !important;
+}
+
+
+.page-item.active .page-link {
+    background-color: transparent;
+    color: #222;
+    text-decoration: underline;
+    font-weight: bold;
+    opacity: 1;
+}
+
+.page-link {
+    color: #1E3A8A;
+    border: none;
+    opacity: .7;
 }
