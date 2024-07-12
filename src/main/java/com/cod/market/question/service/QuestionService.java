@@ -15,21 +15,19 @@ import java.util.Optional;
 public class QuestionService {
     private final QuestionRepository questionRepository;
 
-    public Question create(Product product, Member member, String content) {
-        Question q = new Question();
-        q.setProduct(product);
-        q.setMember(member);
-        q.setContent(content);
-        q.setCreateDate(LocalDateTime.now());
+    public void create(Product product, Member member, String content) {
+        Question q = Question.builder()
+                .member(member)
+                .product(product)
+                .content(content)
+                .build();
 
         questionRepository.save(q);
-        return q;
-
-
     }
 
     public Question getQuestion(Long id) {
         Optional<Question> question = questionRepository.findById(id);
+
         if (question.isPresent()) {
             return question.get();
         } else {
@@ -38,9 +36,11 @@ public class QuestionService {
     }
 
     public void modify(Question question, String content) {
-        question.setContent(content);
-        question.setModifyDate(LocalDateTime.now());
-        questionRepository.save(question);
+        Question modifyQuestion = question.toBuilder()
+                .content(content)
+                .build();
+
+        questionRepository.save(modifyQuestion);
     }
 
     public void delete(Question question) {
