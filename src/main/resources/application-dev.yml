@@ -18,4 +18,4 @@ spring:
       ddl-auto: update
 
 custom:
-  genFileDirPath: C:\work\pictures
+  genFileDirPath: C:\work\genFile
