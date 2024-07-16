@@ -15,12 +15,18 @@ public class DevInitData implements BeforeInitData {
     CommandLineRunner initData(MemberService memberService, ProductService productService) {
         return args -> {
             beforeInit();
-
-            String password = "{noop}1234";
+            //member init
+            String password = "1234";
             memberService.join("user1", password, "user1@test.com", "user1");
             memberService.join("user2", password, "user2@test.com", "user2");
             memberService.join("user3", password, "user3@test.com", "user3");
             memberService.join("user4", password, "user4@test.com", "user4");
+
+            //product list
+            productService.create("타이틀1", "1 설명입니다", 500);
+            productService.create("타이틀2", "2 설명입니다", 500);
+            productService.create("타이틀3", "3 설명입니다", 500);
+            productService.create("타이틀4", "4 설명입니다", 500);
         };
     }
 }
