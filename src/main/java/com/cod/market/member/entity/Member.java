@@ -1,21 +1,15 @@
 package com.cod.market.member.entity;
 
-import com.cod.market.base.BaseEntity;
+import com.cod.market.base.entity.BaseEntity;
 import com.cod.market.cart.entity.Cart;
 import com.cod.market.product.entity.Product;
 import com.cod.market.question.entity.Question;
-import com.fasterxml.jackson.databind.ser.Serializers;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
-import java.time.LocalDateTime;
 import java.util.List;
-
-import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Getter
